@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import "./index.css";
 
 function App() {
