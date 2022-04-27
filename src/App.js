@@ -1,15 +1,14 @@
 import React, { useLayoutEffect, useState } from "react";
-import { render } from "react-dom";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import "./index.css";
 
 function App() {
   const [random, setRandom] = useState(Math.random());
 
-  mapboxgl.accessToken = "pk.eyJ1IjoiYW5uYWFraG1ldCIsImEiOiJjbDFxYTFnbGgwZm9iM2twdGFrZmIwbTF3In0.dHeMvTTWEoqLLM2Gu0SEyQ";
+  mapboxgl.accessToken = "pk.eyJ1IjoiYW5uYWFraG1ldCIsImEiOiJjbDJoZjdybTAwZDllM2lwaGpwMjZreHhsIn0.VpRx5KdVw-9fAvWYptlseg";
 
   useLayoutEffect(() => { 
-    new mapboxgl.Map({
+    var map  = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [37.611920, 55.761990],
@@ -30,9 +29,6 @@ function App() {
     </>
   );
 }
-
-render(<App />, document.querySelector("#root"));
-
 
 export default App;
 
