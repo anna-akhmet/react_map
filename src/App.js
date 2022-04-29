@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
-import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import "./index.css";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 
 function App() {
   const [random, setRandom] = useState(Math.random());
@@ -14,7 +14,7 @@ function App() {
     center: [37.611920, 55.761990],
     zoom: 10
   })
-}, [])
+  }, [])
 
   return (
     <>
