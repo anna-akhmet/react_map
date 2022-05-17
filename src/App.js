@@ -3,14 +3,12 @@ import "./index.css";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 
 function App() {
-  const [marker, setMarker] = useState();
-  const [store, setStore] = useState("km20");
-
   const stores = {
     km20: [37.610641, 55.761994],
     belief: [37.601152, 55.733396],
     brandshop: [37.616812, 55.767839]
   };
+  const [marker, setMarker] = useState([37.610641, 55.761994]);
 
   mapboxgl.accessToken = "pk.eyJ1IjoiYW5uYWFraG1ldCIsImEiOiJjbDJoZjdybTAwZDllM2lwaGpwMjZreHhsIn0.VpRx5KdVw-9fAvWYptlseg";
 
@@ -23,17 +21,15 @@ function App() {
     })
 
     setMarker(new mapboxgl.Marker()
-    .setLngLat([37.6173, 55.7558])
+    .setLngLat([37.610641, 55.761994])
     .addTo(map)
     )
   }, [])
 
   function handleStoreChange(e) {
-    setStore(e.target.value);
-    marker.setLNGat(stores[store]);
-
+    marker.setLngLat(stores[e.target.value]);
   }
-
+  
   return (
     <>
       <div className="map-overlay">
@@ -51,4 +47,3 @@ function App() {
 
 export default App;
 
-// посмотреть урок стейт в юзэффект
